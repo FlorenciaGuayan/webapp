@@ -12,6 +12,7 @@ stage('Build') {
 steps {
 echo 'Building..'
 sh "mvn clean install"
+	archiveArtifacts ​ artifacts​ : ​ '**/*.war'​ , ​ onlyIfSuccessful​ : ​ true
 }
 }
 stage('Test') {
